@@ -1,0 +1,177 @@
+/*****************************
+Forms
+******************************/
+label {
+  font-weight: bold; 
+}
+
+input {
+  font-family: $font-family-default;
+  color: $font-color-default;
+}
+
+input:not([type="submit"]):not([type="checkbox"]):not([type="radio"]) {
+  border: 2px solid rgba($primary-color, .5);
+  padding: 10px;
+  
+  font-style: italic;
+  background: $white;
+  
+  width: 100%;
+
+  &:focus {
+    font-style: normal;
+    border-color: rgba($primary-color, 1);
+  }
+
+  &[disabled] {
+    border-color: rgba($primary-color, .25);
+  }
+
+}
+
+// // //
+.input_wrapper {
+  position: relative;
+
+  // Margin bottom
+  margin-bottom: $one-unit / 1.5;
+  &:last-of-type {
+    margin-bottom: $one-unit * 2;
+  }
+
+  // All states
+  &:after {
+    font-family: 'talkmore-icons';
+    speak: none;
+    position: absolute;
+    right: $one-unit / 1.5;
+    bottom: 10px;
+  }
+
+  // Validated
+  &.validated {
+    &:after {
+      content: "\f012";
+      color: $secondary-color;
+    }
+  }  
+
+  // Error
+  &.error {
+    input {
+      border-color: rgba($alert-color, 1);
+    }
+    
+    &:after {
+      content: "\f00c";
+      color: $alert-color;
+    }
+  } 
+}
+
+/*****************************
+Checkbox and Radio
+Inspo: https://codepen.io/imohkay/pen/bCpxm
+******************************/
+[type="checkbox"], [type="radio"] {
+    opacity: 0;
+    position: absolute;   
+}
+
+[type="checkbox"], [type="radio"], label {
+    @extend .noselect; 
+    display: inline-block;
+    //padding: 8px 8px 8px 0; // Adding some padding extra here to make sure the touch field gets bigger.
+    vertical-align: middle;
+    //margin: 5px;
+    cursor: pointer;
+}
+
+label {
+    position: relative;
+}
+
+[type="checkbox"] + label:before, [type="radio"] + label:before {
+    content: '';
+    background: #fff;
+    border: 2px solid $primary-color;
+    display: inline-block;
+    vertical-align: middle;
+    width: 20px;
+    height: 20px;
+    padding: 2px;
+    margin-right: 10px;
+    text-align: center;
+}
+
+[type="checkbox"]:checked + label:before {
+    background: $secondary-color;
+    box-shadow: inset 0px 0px 0px 3px $white;
+}
+
+[type="radio"] + label:before {
+    border-radius: 50%;
+}
+
+[type="radio"]:checked + label:before {
+    background: $secondary-color;
+    box-shadow: inset 0px 0px 0px 3px #fff;
+}
+
+[type="checkbox"]:focus + label, [type="radio"]:focus + label {
+  //outline: 1px solid #ddd; /* focus style */
+}
+
+/*****************************
+Misc
+******************************/
+// Hide spin button for input with type number. https://stackoverflow.com/questions/3790935/can-i-hide-the-html5-number-input-s-spin-box
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+/*****************************
+Plugins
+******************************/
+// Datepicker styles
+.input_wrapper {
+  .react-datepicker-wrapper, .react-datepicker__input-container {
+    display: block;
+  }  
+}
+
+/*****************************
+Select input
+******************************/
+.select_wrapper {
+  position: relative;
+  display: inline-block;
+
+  &:after {
+    font-family: 'talkmore-icons';
+    speak: none;
+    content: "\f094";
+    position: absolute;
+    right: $one-unit;
+    top: 18px; // Temp, can this be dynamic?    
+  }
+  select {
+    // Set
+    font-family: $font-family-default;
+    
+    // Remove default arrow
+    -webkit-appearance: none; 
+    -moz-appearance: none;
+    appearance: none; 
+
+    // Project styles
+    border: 2px solid $primary-color;
+    border-radius: 0;
+    padding: $button-padding;
+    background: white;
+  }
+}

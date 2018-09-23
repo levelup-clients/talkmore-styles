@@ -1,0 +1,59 @@
+/*****************************
+Reset
+******************************/
+
+* {
+    -webkit-font-smoothing: antialiased;
+    outline: none;
+    box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  overflow-y: scroll;
+}
+
+nav {
+  li {
+    list-style-type: none;
+  }
+}
+
+h1 {
+  padding: 0;
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+ol, ul {
+  padding: 0;
+  margin: 0;
+}
+
+ul, menu, dir {
+  padding: 0;
+  margin: 0;
+}
+
+input {
+  background: none; 
+
+  &:focus {
+    outline: none;
+  }
+}
+
+dl {
+  margin: 0 0 $one-unit 0;
+  dd {
+      -webkit-margin-start: 0;
+  }
+}

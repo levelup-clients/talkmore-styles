@@ -1,0 +1,19 @@
+/*****************************
+Whitespace/padding mixins/helpers
+******************************/
+
+@mixin padding-outer-wrapper($top: 0) { 
+  padding: $top ($one-unit * 1.5) 0;
+  max-width: 1024px;
+  margin: 0 auto;
+}
+
+@mixin padding-vertical-whitespace($padding: $one-unit * 1.5, $add-to-top: true, $add-to-bottom: true) {
+  
+  @if $add-to-top == true {
+    padding-top: $padding; // The reason for not using shorthand is to be able to use this mixin together with padding-outer-wrapper
+  }
+  @if $add-to-bottom == true {
+    padding-bottom: $padding; // The reason for not using shorthand is to be able to use this mixin together with padding-outer-wrapper
+  }
+}

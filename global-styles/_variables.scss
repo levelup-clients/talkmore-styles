@@ -1,0 +1,41 @@
+/*****************************
+Variables
+******************************/
+
+// Colors profile
+$primary-color: #000E4E; // Client blue
+$secondary-color: #A1D078; // Client green
+$tertiary-color: #D9EBCB; // Client light green
+
+$alert-color: #D0021B; // Client red
+$warning-color: #F6D22B; // Client yellow
+
+// Colors General
+$black: #231F20;
+$white: #ffffff;
+
+// Colors - Grayscales
+//$gray-darkest: #231F20;
+//$gray-dark: #231F20;
+//$gray-medium: #9B9B9B;
+$gray-light: #E7E5E4;
+$gray-lightest: #F7F5F5;
+
+// Sizing 
+$one-unit: 16px;
+
+// UI 
+$border-radius: 6px; // Verdi hentet fra talkmore.no
+
+// Typography
+$line-height-default: 1.4;
+$font-color-default: $primary-color;
+$font-size-default: $one-unit;
+$font-family-default: 'CircularPro', sans-serif;
+
+// Modal / lightbox
+$overlay-width: 400px;
+$overlay-padding: $one-unit * 3;
+
+// Button stuff
+$button-padding: 15px 25px;
