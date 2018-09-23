@@ -244,10 +244,10 @@ body, html {
   }
 }
 
-header {
+.site-header {
   background: $gray-lightest;
  
-  .header_inner {
+  &__inner {
     @include padding-outer-wrapper();
     @include padding-vertical-whitespace();
 
@@ -255,6 +255,11 @@ header {
     justify-content: space-between;
     align-items: center;
   } 
+
+  // Variations
+  &--alternative {
+    background: $tertiary-color;
+  }
 }
 
 /*****************************

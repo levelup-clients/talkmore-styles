@@ -1,0 +1,14 @@
+.tm-table {
+  background: red;
+  display: flex;
+  flex-direction: column;
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__row {
+    display: flex;
+  }
+}
