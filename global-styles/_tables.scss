@@ -5,6 +5,7 @@ $table-border-width: 8px;
 
 // Some reset, should probably be removed out of here and into global
 .tm-table {
+  width: 100%;
   a {
     color: $primary-color;
     text-decoration: none;
@@ -18,7 +19,6 @@ $table-border-width: 8px;
 
   &__header-row { 
     display: flex;
-    // background: $white !important;
     font-weight: bold;
   }
 
@@ -32,6 +32,7 @@ $table-border-width: 8px;
     background: $table-even-background; // even
     @include lvl-transition();
     box-shadow: inset $table-border-width 0 0 0 rgba(0,0,0,0);
+    position: relative;
 
     &:nth-of-type(odd) {
       background: $table-odd-background;
@@ -50,12 +51,21 @@ $table-border-width: 8px;
     }
 
     &:hover {
-      text-decoration: underline;
-      * {
-        text-decoration: underline;
+
+      &:before { // The hover dot
+        content: "\2022";
+        font-size: 52px;
+        color: $secondary-color;
+        position: absolute;
+        left: -18px;
+        top: -16px;
       }
-      box-shadow: inset $table-border-width 0 0 0 $secondary-color;
       @include lvl-transition();
+
+      .cell-content {
+        box-shadow: 0 2px 0 0 $secondary-color;
+        display: inline-block;
+      }
     }
 
     &--emphasized {
@@ -76,7 +86,7 @@ $table-border-width: 8px;
   }
 
   &__cell {
-    width: 12.5%;
+    width: 100%;
     overflow: hidden;
     white-space: nowrap;
     padding: ($one-unit * 0.75) ($one-unit * 0.5);
@@ -88,24 +98,35 @@ $table-border-width: 8px;
     &:last-of-type {  
       padding-right: $one-unit * 1.5; // same as the padding provided in @mixin padding-outer-wrapper
     }
-
-    &:hover {
-      overflow: visible;
-      
-      .cell-content {
-        background-image:
-          linear-gradient(
-            to left, 
-            rgba($table-even-background, 0),
-            rgba($table-even-background, 1) $one-unit * 0.5,
-            $table-even-background
-          );
-        position: absolute;
-        padding-right: $one-unit * 0.5;
-      }
-    }
     
   }
 
+}
 
+.tm-table--narrow { // Narrow width table
+  
+  // border-radius: $border-radius;
+  // overflow: hidden;
+  // margin: 0 ($one-unit * 1.5); // same as outere wrapper
+  // border: 2px solid $primary-color;
+  // // max-width: 800px;
+  // margin-bottom: $one-unit * 3;
+
+  .tm-table__row {
+   // justify-content: flex-end;
+  }
+
+  .tm-table__cell {
+    // width: 10%;
+    &:first-of-type {
+
+      // padding-left: 24vw;
+
+
+    }
+
+    &:last-of-type {  
+      // padding-right: 24vw;
+    }
+  }
 }

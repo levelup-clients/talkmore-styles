@@ -4,6 +4,55 @@
 // @todo, consider renaming _wrapper classes (classes where this is a postfix)
 
 /*****************************
+Icon
+******************************/
+// Icon util
+.icon {
+  font-family: 'talkmore-icons';
+  speak: none;
+}
+
+// Position: icon to left or right?
+// $Content: Unicode of the icon
+@mixin add-icon-to-button($content, $position: 'left') {
+  @if $position == 'left' {
+    &:before {
+      @extend .icon;
+      padding-right: $one-unit / 2;
+      margin-left: -($one-unit / 4); // Fake alignment
+      content: $content;
+    }  
+  } @else {
+    &:after {
+      @extend .icon;
+      padding-left: $one-unit / 2;
+      margin-right: -($one-unit / 4); // Fake alignment
+      content: $content;
+    } 
+  }
+}
+
+// Position: icon to left or right?
+// $Content: Unicode of the icon
+@mixin add-icon-to-ui($content, $position: 'left') {
+  @if $position == 'left' {
+    &:before {
+      @extend .icon;
+      padding-right: $one-unit / 1.5;
+      color: $warning-color; // Should be dynamic so we could use mixin in more cases
+      content: $content;
+    }  
+  } @else {
+    &:after {
+      @extend .icon;
+      padding-left: $one-unit / 1.5;
+      color: $warning-color; // Should be dynamic so we could use mixin in more cases
+      content: $content;
+    } 
+  }
+}
+
+/*****************************
 temp for svg in header, @todo maybe move from here
 ******************************/
 .talk_part_logo { 
@@ -78,6 +127,13 @@ button {
   font-weight: bold;
   white-space: nowrap;
 
+  // @todo only serve transitions if input is mouse
+  @include lvl-transition($property: background);
+  &:hover {
+    @include lvl-transition($property: background);
+  }
+  // end @todo
+
   // States
   &:hover:not([disabled]) {
     cursor: pointer; // Not sure why we need to set this actually
@@ -107,57 +163,31 @@ button {
     padding: 28px 45px;
     font-size: 18px;
   }
-}
 
+  &.attached-button { // temp
+    padding: 13px 20px;; // 15px 25px;
+    font-size: 16px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
 
-/*****************************
-Icon
-******************************/
-// Icon util
-.icon {
-  font-family: 'talkmore-icons';
-  speak: none;
-}
+  &.small-button {
+    padding: 13px 20px;; // 15px 25px;
+    font-size: 16px;
+  }
 
-// Position: icon to left or right?
-// $Content: Unicode of the icon
-@mixin add-icon-to-button($content, $position: 'left') {
-  @if $position == 'left' {
-    &:before {
-      @extend .icon;
-      padding-right: $one-unit / 2;
-      margin-left: -($one-unit / 4); // Fake alignment
-      content: $content;
-    }  
-  } @else {
-    &:after {
-      @extend .icon;
-      padding-left: $one-unit / 2;
-      margin-right: -($one-unit / 4); // Fake alignment
-      content: $content;
-    } 
+  &.btn-danger { // @todo, rename class
+    background: $alert-color;
+    color: $white;
+    @include add-icon-to-button("\f029", 'left');
+    &:hover {
+      background: darken($alert-color, 4%);
+    }
   }
 }
 
-// Position: icon to left or right?
-// $Content: Unicode of the icon
-@mixin add-icon-to-ui($content, $position: 'left') {
-  @if $position == 'left' {
-    &:before {
-      @extend .icon;
-      padding-right: $one-unit / 1.5;
-      color: $warning-color; // Should be dynamic so we could use mixin in more cases
-      content: $content;
-    }  
-  } @else {
-    &:after {
-      @extend .icon;
-      padding-left: $one-unit / 1.5;
-      color: $warning-color; // Should be dynamic so we could use mixin in more cases
-      content: $content;
-    } 
-  }
-}
+
+
 
 
 /*****************************
@@ -275,16 +305,58 @@ Main
 
   @include padding-outer-wrapper($max-width: none);
   @include whitespace-vertical();
+
+  h1 {
+    margin: 0; // @todo, move this out from here
+  }
+
+  &.main-header--dark {
+    background: none;
+    display: inline-block;
+    margin-left: 10px;
+    border-radius: 0 0 10px 10px;
+  }
 }
 
 .main-body {
-  // @include padding-outer-wrapper($max-width: none);
+  display: flex;
+  flex-wrap: wrap;
+  
+  &:not(:first-child) {
+    flex: 1;
+  }
+
   @include whitespace-vertical();
   @include whitespace-vertical($property: margin, $top: false);
 
   &__header {
-    @include padding-outer-wrapper($max-width: none);
+    width: 100%;
+    margin: 0 ($one-unit * 1.5);
+    // @include padding-outer-wrapper($max-width: none);
+    // margin-bottom: $one-unit; // temp?
   }
+}
+
+
+
+.tm-section-card {
+  margin: ($one-unit * 1.5); // same as padding-outer-wrapper
+  min-width: 40%;
+
+
+  &__header {
+
+  }
+
+  &__data {
+
+    border: 2px solid $gray-lightest;
+    
+    border-radius: $border-radius; 
+    overflow: hidden;    
+  }
+
+
 }
 
 /*****************************
