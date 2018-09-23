@@ -26,7 +26,13 @@ $table-even-background: $white;
 
       &:hover {
         .cell-content {
-          background: $table-odd-background;        
+          background-image:
+            linear-gradient(
+              to left, 
+              rgba($table-odd-background, 0),
+              rgba($table-odd-background, 1) $one-unit * 0.5,
+              $table-odd-background
+            );
         }
       }
     }
@@ -44,8 +50,15 @@ $table-even-background: $white;
       overflow: visible;
       
       .cell-content {
-        background: $table-even-background;
+        background-image:
+          linear-gradient(
+            to left, 
+            rgba($table-even-background, 0),
+            rgba($table-even-background, 1) $one-unit * 0.5,
+            $table-even-background
+          );
         position: absolute;
+        padding-right: $one-unit * 0.5;
       }
     }
     

@@ -262,8 +262,17 @@ body, html {
     background: $tertiary-color;
     .site-header__inner {
       @include padding-outer-wrapper($max-width: none);
+      @include padding-vertical-whitespace();
     }
   }
+}
+
+.main-header {
+  background: $gray-lightest;
+
+  @include padding-outer-wrapper($max-width: none);
+  @include whitespace-vertical();
+  @include whitespace-vertical($property: margin, $top: false);
 }
 
 /*****************************

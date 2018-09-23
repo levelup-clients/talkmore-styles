@@ -18,3 +18,30 @@ Whitespace/padding mixins/helpers
     padding-bottom: $padding; // The reason for not using shorthand is to be able to use this mixin together with padding-outer-wrapper
   }
 }
+
+// Vertical Whitespace
+// --- $factor ---    
+// --- $property ---  CCC property - padding or margin? 
+// --- $top ---     Add this whitespace to top?
+// --- $bottom ---    Add this whitespace to bottom?
+@mixin whitespace-vertical($factor: 4, $property: padding, $top: true, $bottom: true) {
+  $padding-size: ($global-margin / 1.7) * $factor;
+  
+  // "Default"
+  #{$property}-top: $padding-size;
+  #{$property}-bottom: $padding-size;
+
+  // @include breakpoint(xlarge) {
+  //   $padding-size: $padding-size * 1.25;
+  //   #{$property}-top: $padding-size;
+  //   #{$property}-bottom: $padding-size;   
+  // }
+  
+  // No top or no bottom
+  @if $top == false {
+    #{$property}-top: 0 !important;
+  } @else if $bottom == false {
+    #{$property}-bottom: 0 !important;
+  }
+  
+}
