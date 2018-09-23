@@ -1,7 +1,16 @@
+// Settings
+$table-odd-background: $gray-lightest;
+$table-even-background: $white;
+
+// Styles
+
 .tm-table {
-  background: red;
   display: flex;
   flex-direction: column;
+
+  &__header { 
+    background: $white !important;
+  }
 
   &__body {
     display: flex;
@@ -10,5 +19,37 @@
 
   &__row {
     display: flex;
+    background: $table-even-background; // even
+
+    &:nth-of-type(odd) {
+      background: $table-odd-background;
+
+      &:hover {
+        .cell-content {
+          background: $table-odd-background;        
+        }
+      }
+    }
   }
+
+  &__cell {
+    width: 12.5%;
+    overflow: hidden;
+    white-space: nowrap;
+    padding: $one-unit * 0.5;
+
+
+
+    &:hover {
+      overflow: visible;
+      
+      .cell-content {
+        background: $table-even-background;
+        position: absolute;
+      }
+    }
+    
+  }
+
+
 }

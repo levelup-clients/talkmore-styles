@@ -254,11 +254,15 @@ body, html {
     display: flex; 
     justify-content: space-between;
     align-items: center;
+
   } 
 
-  // Variations
+  // Used for field sales admin
   &--alternative {
     background: $tertiary-color;
+    .site-header__inner {
+      @include padding-outer-wrapper($max-width: none);
+    }
   }
 }
 
