@@ -45,3 +45,14 @@ Whitespace/padding mixins/helpers
   }
   
 }
+
+//////////////////////////////////  
+// UX - Transitions
+//////////////////////////////////
+$transition-duration-default: .15s;
+$transition-timing-function-default: ease;
+
+// Transitions
+@mixin lvl-transition($property: all, $duration: $transition-duration-default, $timing-function: $transition-timing-function-default) {
+  transition: $property $duration $timing-function;
+}

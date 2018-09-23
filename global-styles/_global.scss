@@ -267,12 +267,24 @@ body, html {
   }
 }
 
+/*****************************
+Main 
+******************************/
 .main-header {
   background: $gray-lightest;
 
   @include padding-outer-wrapper($max-width: none);
   @include whitespace-vertical();
+}
+
+.main-body {
+  // @include padding-outer-wrapper($max-width: none);
+  @include whitespace-vertical();
   @include whitespace-vertical($property: margin, $top: false);
+
+  &__header {
+    @include padding-outer-wrapper($max-width: none);
+  }
 }
 
 /*****************************

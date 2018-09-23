@@ -1,15 +1,25 @@
 // Settings
 $table-odd-background: $gray-lightest;
 $table-even-background: $white;
+$table-border-width: 8px;
+
+// Some reset, should probably be removed out of here and into global
+.tm-table {
+  a {
+    color: $primary-color;
+    text-decoration: none;
+  }
+}
 
 // Styles
-
 .tm-table {
   display: flex;
   flex-direction: column;
 
-  &__header { 
-    background: $white !important;
+  &__header-row { 
+    display: flex;
+    // background: $white !important;
+    font-weight: bold;
   }
 
   &__body {
@@ -20,6 +30,8 @@ $table-even-background: $white;
   &__row {
     display: flex;
     background: $table-even-background; // even
+    @include lvl-transition();
+    box-shadow: inset $table-border-width 0 0 0 rgba(0,0,0,0);
 
     &:nth-of-type(odd) {
       background: $table-odd-background;
@@ -36,15 +48,46 @@ $table-even-background: $white;
         }
       }
     }
+
+    &:hover {
+      text-decoration: underline;
+      * {
+        text-decoration: underline;
+      }
+      box-shadow: inset $table-border-width 0 0 0 $secondary-color;
+      @include lvl-transition();
+    }
+
+    &--emphasized {
+      background: rgba($warning-color, 1) !important; // @todo, rewrite to avoid !important statement here
+      &:hover {
+        .cell-content {
+          background-image:
+            linear-gradient(
+              to left, 
+              rgba($warning-color, 0),
+              rgba($warning-color, 1) $one-unit * 0.5,
+              $warning-color
+            ) !important;
+        }
+      }
+    }
+
   }
 
   &__cell {
     width: 12.5%;
     overflow: hidden;
     white-space: nowrap;
-    padding: $one-unit * 0.5;
+    padding: ($one-unit * 0.75) ($one-unit * 0.5);
 
+    &:first-of-type {
+      padding-left: $one-unit * 1.5; // same as the padding provided in @mixin padding-outer-wrapper
+    }
 
+    &:last-of-type {  
+      padding-right: $one-unit * 1.5; // same as the padding provided in @mixin padding-outer-wrapper
+    }
 
     &:hover {
       overflow: visible;
