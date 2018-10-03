@@ -179,3 +179,12 @@ $table-border-width: 8px;
     }
   }
 }
+
+// Specific
+.--change-password { // Should be more dynamic/flexible maybe(?)
+  min-width: 250px; 
+}
+
+.--align-right {
+  text-align: right;
+}

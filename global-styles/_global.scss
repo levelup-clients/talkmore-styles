@@ -201,11 +201,18 @@ body, html {
 // Body color logged in 
 .logged-in {
   background: $gray-lightest;
+
+  &.--fieldsales-admin {
+    background: none;
+  }
 }
 
 // Body color NOT logged in
 .not-logged-in {
   background: linear-gradient($tertiary-color 50%, $white 50%);
+  &.--fieldsales-admin {
+    background: linear-gradient($primary-color 50%, $white 50%);
+  }
 }
 
 #root, .app_wrapper, .app {
@@ -234,6 +241,11 @@ body, html {
     text-align: center;
     svg { // logo
       margin-bottom: $one-unit * 2; 
+    }
+
+    .sub-brand {
+     margin-top: -($one-unit * 1.75);
+     margin-bottom: $one-unit * 1.75;
     }
 
     button {
@@ -327,7 +339,12 @@ Main
   }
 
   > * {
-    width: 30%;
+    width: 100%;
+  }
+  @media (min-width: 1000px) { // temp query, should be more dynamic and accurate
+    > * {
+      width: 50%;
+    }
   }
 
   @include whitespace-vertical();
@@ -346,8 +363,7 @@ Main
 
 
 .tm-section-card {
-  margin: ($one-unit * 1.5); // same as padding-outer-wrapper
-  // min-width: 40%;
+  padding: ($one-unit * 1.5); // same as padding-outer-wrapper
 
 
   &__header {
