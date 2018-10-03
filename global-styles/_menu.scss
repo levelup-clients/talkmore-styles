@@ -16,11 +16,32 @@
 
   &__anchor {
     font-size: 22px;
-    padding: $one-unit * 0.25; // "UX padding" - bigger hover/touch field
+    padding: ($one-unit * 0.25) 0; // "UX padding" - bigger hover/touch field
     text-decoration: none;
+    box-shadow: 0 3px 0 0 $secondary-color;
   }
 
   .is-active {
-    text-decoration: underline;
+    a {
+      box-shadow: 0 3px 0 0 currentColor; 
+      @include lvl-transition();
+    }
+
+    &:hover {
+      a { 
+        box-shadow: 0 3px 0 0 currentColor; 
+        transition: none;
+      }
+    }
+
   }
+
+  :hover {
+    a {
+      box-shadow: 0 3px 0 0 lighten($secondary-color, 6%);
+      @include lvl-transition();
+    }
+
+  }
+
 }

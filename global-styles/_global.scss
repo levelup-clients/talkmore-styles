@@ -341,11 +341,15 @@ Main
   > * {
     width: 100%;
   }
-  @media (min-width: 1000px) { // temp query, should be more dynamic and accurate
+
+ 
+  @media (min-width: 1000px) { // temp query, should be more dynamic and accurate. Used in offices details at the moment
     > * {
       width: 50%;
     }
-  }
+  }    
+
+
 
   @include whitespace-vertical();
   @include whitespace-vertical($property: margin, $top: false);
@@ -656,7 +660,7 @@ Loading in UI // TEMP STYLES
   }
 }
 
-// Temp 
+// Temp (adminpanel specific)
 .tm-logo, .tm-logo-link {
   text-decoration: none !important; 
   text-transform: uppercase; 
@@ -666,4 +670,11 @@ Loading in UI // TEMP STYLES
 
 .sub-brand {
   font-size: 70%;
+}
+
+.tm-screenshot {
+  overflow: hidden; 
+  border-radius: $border-radius;
+  border: 2px solid $primary-color;
+  margin-bottom: $one-unit;
 }
