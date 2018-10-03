@@ -209,7 +209,10 @@ body, html {
 
 // Body color NOT logged in
 .not-logged-in {
-  background: linear-gradient($primary-color 50%, $white 50%);
+  background: linear-gradient($tertiary-color 50%, $white 50%);
+  &.--fieldsales-admin {
+    background: linear-gradient($primary-color 50%, $white 50%);
+  }
 }
 
 #root, .app_wrapper, .app {
@@ -336,7 +339,12 @@ Main
   }
 
   > * {
-    width: 30%;
+    width: 100%;
+  }
+  @media (min-width: 1000px) { // temp query, should be more dynamic and accurate
+    > * {
+      width: 50%;
+    }
   }
 
   @include whitespace-vertical();
@@ -355,8 +363,7 @@ Main
 
 
 .tm-section-card {
-  margin: ($one-unit * 1.5); // same as padding-outer-wrapper
-  // min-width: 40%;
+  padding: ($one-unit * 1.5); // same as padding-outer-wrapper
 
 
   &__header {
