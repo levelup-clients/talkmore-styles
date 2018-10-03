@@ -1,0 +1,26 @@
+.site-nav {
+  display: flex;
+  align-items: center;
+  > *:not(:last-child), > * > *:not(:last-child) {
+      padding-right: $one-unit * 2;
+  }
+}
+
+.site-menu {
+  list-style: none;
+  display: flex;
+
+  &__item {
+
+  }
+
+  &__anchor {
+    font-size: 22px;
+    padding: $one-unit * 0.25; // "UX padding" - bigger hover/touch field
+    text-decoration: none;
+  }
+
+  .is-active {
+    text-decoration: underline;
+  }
+}

@@ -326,6 +326,10 @@ Main
     flex: 1;
   }
 
+  > * {
+    width: 30%;
+  }
+
   @include whitespace-vertical();
   @include whitespace-vertical($property: margin, $top: false);
 
@@ -334,6 +338,10 @@ Main
     margin: 0 ($one-unit * 1.5);
     // @include padding-outer-wrapper($max-width: none);
     // margin-bottom: $one-unit; // temp?
+
+    .emphasized {
+      color: $secondary-color;
+    }
   }
 }
 
@@ -341,7 +349,7 @@ Main
 
 .tm-section-card {
   margin: ($one-unit * 1.5); // same as padding-outer-wrapper
-  min-width: 40%;
+  // min-width: 40%;
 
 
   &__header {
@@ -498,5 +506,9 @@ Links
 a {
   &:hover {
     cursor: pointer;
+  }
+
+  &:visited, &:active {
+    color: $primary-color;
   }
 }
