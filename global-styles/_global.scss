@@ -291,7 +291,7 @@ body, html {
   &--alternative {
     background: $tertiary-color;
     .site-header__inner {
-      @include padding-outer-wrapper($max-width: none);
+      @include padding-outer-wrapper($max-width: none);  
       @include padding-vertical-whitespace();
     }
   }
@@ -303,8 +303,8 @@ Main
 .main-header {
   background: $gray-lightest;
 
-  @include padding-outer-wrapper($max-width: none);
-  @include whitespace-vertical();
+  @include padding-outer-wrapper($max-width: none);  
+  @include padding-vertical-whitespace();
 
   h1 {
     margin: 0; // @todo, move this out from here
@@ -326,14 +326,20 @@ Main
     flex: 1;
   }
 
+  > * {
+    width: 30%;
+  }
+
   @include whitespace-vertical();
   @include whitespace-vertical($property: margin, $top: false);
 
   &__header {
     width: 100%;
     margin: 0 ($one-unit * 1.5);
-    // @include padding-outer-wrapper($max-width: none);
-    // margin-bottom: $one-unit; // temp?
+    
+    .emphasized {
+      color: $secondary-color;
+    }
   }
 }
 
@@ -341,7 +347,7 @@ Main
 
 .tm-section-card {
   margin: ($one-unit * 1.5); // same as padding-outer-wrapper
-  min-width: 40%;
+  // min-width: 40%;
 
 
   &__header {
@@ -498,5 +504,114 @@ Links
 a {
   &:hover {
     cursor: pointer;
+  }
+
+  &:visited, &:active {
+    color: $primary-color;
+  }
+}
+
+/*****************************
+Loading in UI
+******************************/
+
+.h-has-loader {
+  display: block;
+  height: 100%;
+  width: 100%;
+  position: relative;
+  min-height: 200px; // Can we have this dynamic?
+
+  .lds_w {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+    z-index: 800;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255,255,255,.7);
+
+    @include lvl-transition($property: opacity, $duration: 0.5s);
+  }
+
+  // Loading done
+  &.is-done-loading {
+    .lds_w {
+      opacity: 0;
+      @include lvl-transition($property: opacity, $duration: 0.5s);
+    }
+
+    .lds-ellipsis {
+      display: none;
+    }
+
+  }
+  // END Loading done
+
+  .lds-ellipsis {
+    display: inline-block;
+    z-index: 900;
+  }
+
+}
+
+// Source: https://loading.io/css/
+.lds-ellipsis {
+  display: none;
+  position: relative;
+  width: 64px;
+  height: 64px;
+}
+.lds-ellipsis div {
+  position: absolute;
+  top: 27px;
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background: $primary-color;
+  animation-timing-function: cubic-bezier(0, 1, 1, 0);
+}
+.lds-ellipsis div:nth-child(1) {
+  left: 6px;
+  animation: lds-ellipsis1 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(2) {
+  left: 6px;
+  animation: lds-ellipsis2 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(3) {
+  left: 26px;
+  animation: lds-ellipsis2 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(4) {
+  left: 45px;
+  animation: lds-ellipsis3 0.6s infinite;
+}
+@keyframes lds-ellipsis1 {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes lds-ellipsis3 {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+@keyframes lds-ellipsis2 {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(19px, 0);
   }
 }

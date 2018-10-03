@@ -73,4 +73,8 @@ p {
 h1 {
   font-size: $one-unit * 2;
   margin-bottom: $one-unit;
+
+  * {
+    font-size: $one-unit * 2;
+  }
 }

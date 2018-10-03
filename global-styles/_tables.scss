@@ -20,6 +20,55 @@ $table-border-width: 8px;
   &__header-row { 
     display: flex;
     font-weight: bold;
+    position: relative;
+
+    .-sortable { // cell
+      overflow: visible;
+      cursor: pointer;
+      position: relative;
+      @include lvl-transition();
+      @extend .noselect;
+      
+      .cell-content {
+        box-shadow: 0 2px 0 0 currentColor;
+
+        &:after {
+          position: absolute;
+          top: 18px; // temp, should be dynamic
+          padding-left: 6px;
+          @extend .icon;
+          font-size: 10px;
+          // content: "\f021";
+        }
+      }
+      
+      &:hover {
+        color: $white;
+        background: $primary-color;
+        @include lvl-transition();
+        .cell-content {
+          box-shadow: 0 2px 0 0 rgba(0,0,0,0);  
+        }
+      }
+
+    }
+
+    .is-order-asc {
+      .cell-content {
+        &:after {
+          content: "\f094";
+        }
+      }
+    }
+
+    .is-order-desc {
+      .cell-content {
+        &:after {
+          content: "\f093";
+        }        
+      }
+    }
+
   }
 
   &__body {
