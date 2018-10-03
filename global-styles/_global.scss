@@ -342,12 +342,14 @@ Main
     width: 100%;
   }
 
- 
-  @media (min-width: 1000px) { // temp query, should be more dynamic and accurate. Used in offices details at the moment
-    > * {
-      width: 50%;
-    }
-  }    
+  &:not(.--wide-layout-temp-class) {
+    @media (min-width: 1000px) { // temp query, should be more dynamic and accurate. Used in offices details at the moment
+      > * {
+        width: 50%;
+      }
+    }     
+  }
+   
 
 
 

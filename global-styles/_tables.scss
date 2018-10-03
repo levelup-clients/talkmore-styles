@@ -152,6 +152,15 @@ $table-border-width: 8px;
 
 }
 
+.--single-sales {
+  .tm-table {
+    .tm-table__row {
+      .tm-table__cell:first-child {
+        width: 250px;
+      }
+    }
+  }
+}
 
 .tm-table--narrow { // Narrow width table
   
