@@ -354,7 +354,7 @@ Main
 
 
   @include whitespace-vertical();
-  @include whitespace-vertical($property: margin, $top: false);
+  // @include whitespace-vertical($property: margin, $top: false);
 
   &__header {
     width: 100%;
