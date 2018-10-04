@@ -244,8 +244,8 @@ body, html {
     }
 
     .sub-brand {
-     margin-top: -($one-unit * 1.75);
-     margin-bottom: $one-unit * 1.75;
+      margin-top: -($one-unit * 1.75);
+      margin-bottom: $one-unit * 1.75;
     }
 
     button {
@@ -341,14 +341,20 @@ Main
   > * {
     width: 100%;
   }
-  @media (min-width: 1000px) { // temp query, should be more dynamic and accurate
-    > * {
-      width: 50%;
-    }
+
+  &:not(.--wide-layout-temp-class) {
+    @media (min-width: 1000px) { // temp query, should be more dynamic and accurate. Used in offices details at the moment
+      > * {
+        width: 50%;
+      }
+    }     
   }
+   
+
+
 
   @include whitespace-vertical();
-  @include whitespace-vertical($property: margin, $top: false);
+  // @include whitespace-vertical($property: margin, $top: false);
 
   &__header {
     width: 100%;
@@ -528,8 +534,32 @@ a {
 }
 
 /*****************************
-Loading in UI
+Loading in UI // TEMP STYLES
 ******************************/
+
+.tm-table.h-has-loader {
+  .tm-table__header-row {
+    opacity: .2;
+    @include lvl-transition($property: opacity, $duration: 0.4s);
+  }
+
+  .tm-table__body {
+    opacity: .2;
+    @include lvl-transition($property: opacity, $duration: 0.4s);
+  }
+  
+  &.is-done-loading { 
+    .tm-table__header-row {
+      opacity: 1;
+      @include lvl-transition($property: opacity, $duration: 0.4s);
+    }
+
+    .tm-table__body {
+      opacity: 1;
+      @include lvl-transition($property: opacity, $duration: 0.4s);
+    }
+  }
+}
 
 .h-has-loader {
   display: block;
@@ -543,7 +573,7 @@ Loading in UI
     justify-content: center;
     align-items: center;
   
-    z-index: 800;
+    // z-index: 800;
     position: absolute;
     top: 0;
     left: 0;
@@ -557,8 +587,6 @@ Loading in UI
   // Loading done
   &.is-done-loading {
     .lds_w {
-      z-index: -1;
-      opacity: 0;
       @include lvl-transition($property: opacity, $duration: 0.5s);
     }
 
@@ -571,14 +599,14 @@ Loading in UI
 
   .lds-ellipsis {
     display: inline-block;
-    z-index: 900;
   }
 
 }
 
+// Loader itself
 // Source: https://loading.io/css/
 .lds-ellipsis {
-  display: none;
+  // display: none;
   position: relative;
   width: 64px;
   height: 64px;
@@ -631,4 +659,23 @@ Loading in UI
   100% {
     transform: translate(19px, 0);
   }
+}
+
+// Temp (adminpanel specific)
+.tm-logo, .tm-logo-link {
+  text-decoration: none !important; 
+  text-transform: uppercase; 
+  font-weight: bold; 
+  letter-spacing: 1.5px;
+}
+
+.sub-brand {
+  font-size: 70%;
+}
+
+.tm-screenshot {
+  overflow: hidden; 
+  border-radius: $border-radius;
+  border: 2px solid $primary-color;
+  margin-bottom: $one-unit;
 }
