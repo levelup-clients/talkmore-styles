@@ -557,6 +557,7 @@ Loading in UI
   // Loading done
   &.is-done-loading {
     .lds_w {
+      z-index: -1;
       opacity: 0;
       @include lvl-transition($property: opacity, $duration: 0.5s);
     }
