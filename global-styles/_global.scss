@@ -112,6 +112,16 @@ Temp util @todo, maybe move to separate file
 }
 
 /*****************************
+A
+******************************/
+a {
+  &.disabled {
+    pointer-events: none;
+    cursor: auto;
+  }
+}
+
+/*****************************
 Buttons
 ******************************/
 // Buttons
