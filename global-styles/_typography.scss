@@ -5,11 +5,11 @@ Fonts
 // CircularPro-Book "Main font"
 @font-face {
   font-family: 'CircularPro';
-  src:  url('../fonts/CircularPro-Book.eot?#iefix') format('embedded-opentype'),  
-        url('../fonts/CircularPro-Book.otf')  format('opentype'),
-        url('../fonts/CircularPro-Book.woff') format('woff'),
-        url('../fonts/CircularPro-Book.ttf')  format('truetype'), 
-        url('../fonts/CircularPro-Book.svg#CircularPro-Book') format('svg');
+  src:  url('https://storage.googleapis.com/talkmore_prod/fonts/CircularPro-Book.eot?#iefix') format('embedded-opentype'),  
+        url('https://storage.googleapis.com/talkmore_prod/fonts/CircularPro-Book.otf')  format('opentype'),
+        url('https://storage.googleapis.com/talkmore_prod/fonts/CircularPro-Book.woff') format('woff'),
+        url('https://storage.googleapis.com/talkmore_prod/fonts/CircularPro-Book.ttf')  format('truetype'), 
+        url('https://storage.googleapis.com/talkmore_prod/fonts/CircularPro-Book.svg#CircularPro-Book') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -17,11 +17,11 @@ Fonts
 // CircularPro-Bold "Bold font"
 @font-face {
   font-family: 'CircularPro';
-  src:  url('../fonts/CircularPro-Bold.eot?#iefix') format('embedded-opentype'),
-        url('../fonts/CircularPro-Bold.otf')  format('opentype'),
-        url('../fonts/CircularPro-Bold.woff') format('woff'),
-        url('../fonts/CircularPro-Bold.ttf')  format('truetype'),
-        url('../fonts/CircularPro-Bold.svg#CircularPro-Bold') format('svg');
+  src:  url('https://storage.googleapis.com/talkmore_prod/fonts/CircularPro-Bold.eot?#iefix') format('embedded-opentype'),
+        url('https://storage.googleapis.com/talkmore_prod/fonts/CircularPro-Bold.otf')  format('opentype'),
+        url('https://storage.googleapis.com/talkmore_prod/fonts/CircularPro-Bold.woff') format('woff'),
+        url('https://storage.googleapis.com/talkmore_prod/fonts/CircularPro-Bold.ttf')  format('truetype'),
+        url('https://storage.googleapis.com/talkmore_prod/fonts/CircularPro-Bold.svg#CircularPro-Bold') format('svg');
   font-weight: bold;
   font-style: normal;
 }
@@ -29,11 +29,11 @@ Fonts
 // CircularPro-BookItalic "Normal and italic"
 @font-face {
   font-family: 'CircularPro';
-  src:  url('../fonts/CircularPro-BookItalic.eot?#iefix') format('embedded-opentype'),  
-        url('../fonts/CircularPro-BookItalic.otf')  format('opentype'),
-        url('../fonts/CircularPro-BookItalic.woff') format('woff'),
-        url('../fonts/CircularPro-BookItalic.ttf')  format('truetype'), 
-        url('../fonts/CircularPro-BookItalic.svg#CircularPro-BookItalic') format('svg');
+  src:  url('https://storage.googleapis.com/talkmore_prod/fonts/CircularPro-BookItalic.eot?#iefix') format('embedded-opentype'),  
+        url('https://storage.googleapis.com/talkmore_prod/fonts/CircularPro-BookItalic.otf')  format('opentype'),
+        url('https://storage.googleapis.com/talkmore_prod/fonts/CircularPro-BookItalic.woff') format('woff'),
+        url('https://storage.googleapis.com/talkmore_prod/fonts/CircularPro-BookItalic.ttf')  format('truetype'), 
+        url('https://storage.googleapis.com/talkmore_prod/fonts/CircularPro-BookItalic.svg#CircularPro-BookItalic') format('svg');
   font-weight: normal;
   font-style: italic;
 }
@@ -41,10 +41,10 @@ Fonts
 // TM Icons
 @font-face {
   font-family: 'talkmore-icons';
-  src:  url('../fonts/talkmore-icons.eot?#iefix') format('embedded-opentype'),  
-        url('../fonts/talkmore-icons.woff') format('woff'),
-        url('../fonts/talkmore-icons.ttf')  format('truetype'), 
-        url('../fonts/talkmore-icons.svg#talkmore-icons') format('svg');
+  src:  url('https://storage.googleapis.com/talkmore_prod/fonts/talkmore-icons.eot?#iefix') format('embedded-opentype'),  
+        url('https://storage.googleapis.com/talkmore_prod/fonts/talkmore-icons.woff') format('woff'),
+        url('https://storage.googleapis.com/talkmore_prod/fonts/talkmore-icons.ttf')  format('truetype'), 
+        url('https://storage.googleapis.com/talkmore_prod/fonts/talkmore-icons.svg#talkmore-icons') format('svg');
   font-weight: normal;
   font-style: normal;
 }
