@@ -1,3 +1,17 @@
+// Reset
+body {
+  padding: 0;
+  margin: 0;
+  overflow-y: scroll;
+}
+
+// Body/HTML config
+body, html {
+  width: 100%;
+  height: 100%;
+}
+
+//
 .lvl-tm {
 
   // Util
