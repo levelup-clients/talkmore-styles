@@ -1,0 +1,89 @@
+$pagination-factor: 2.5;
+
+.tm-pagination {
+  display: flex;
+  justify-content: flex-end;
+
+  &__list {
+    display: flex;
+  }
+
+  &__page {
+    &:not(:last-child) {
+      padding-right: $one-unit * .2;
+    }
+
+    a, span {
+      display: inline-block;
+      text-decoration: none; // "Reset"
+      position: relative;
+      font-weight: bold;
+      font-size: 75%;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+  }
+
+  // Padding overrides for next and prev
+  &__page--next {
+    padding-left: $one-unit * .6 !important;
+  }
+
+  &__page--prev {
+    padding-right: $one-unit * .6 !important;
+  }
+  // END Padding overrides for next and prev
+
+  // Prev and next
+  &__page--next, &__page--prev {
+
+    > * {
+      padding-top: ($one-unit * $pagination-factor) / 4;
+      box-shadow: 0 2px 0 0 $secondary-color;
+
+      &:hover {
+        box-shadow: 0 2px 0 0 currentColor;
+      }
+
+    }
+
+    &.is-disabled {
+      > * {
+        color: $gray-light;
+        box-shadow: 0 2px 0 0 currentColor;
+        @extend .noselect;
+      }
+
+    }
+
+  }
+
+  // Page numbers
+  &__page--number {
+    a {
+      border: 2px solid $gray-lightest;
+      border-radius: $border-radius;
+      text-align: center;
+      line-height: $one-unit * $pagination-factor - 4px;
+      width: $one-unit * $pagination-factor;
+      height: $one-unit * $pagination-factor;
+      @include lvl-transition();
+
+      &:hover {
+        border-color: darken($gray-light, 10%);
+        @include lvl-transition();
+      }
+
+    }
+
+  .is-beeing-displayed {
+    border-color: $primary-color;
+
+    &:hover {
+      border-color: $primary-color;
+    }
+  }
+
+  }
+
+}
