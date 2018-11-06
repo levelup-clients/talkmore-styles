@@ -43,28 +43,46 @@ body, html {
   // Add user
   @import "add-user";
 
-  // Add menu
+  // Menu
   @import "menu";
 
-  // Add pagination
+  // Pagination
   @import "pagination";
 
-  // Add Cards
+  // Cards
   @import "cards";
+
+  // Progress indicator
+  @import "progress-indicator";
+
+  // Message buble
+  @import "messages";
 
   // react-redux-toastr
   @import '~react-redux-toastr/src/styles/index';
 
 }
 
-
+//
+//
+//
+//
 // Specific for live chat app (please move this to separate file)
-$live-chat-app-font-size: 14px; // This is same size as LiveChat have in their admin so natural for us to use this size as well
+//
+//
+//
+//
+
+$live-chat-app-font-size: 12px; // This is same size as LiveChat have in their admin so natural for us to use this size as well
 
 .tm-live-chat-app {
-  padding: 16px; // temp - should be dynamic?
   font-size: $live-chat-app-font-size;
   *, p {
     font-size: $live-chat-app-font-size;
   }
+}
+
+// Helper - section wrapper
+.h-section {
+  padding: 16px;
 }
