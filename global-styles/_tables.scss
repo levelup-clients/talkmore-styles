@@ -17,7 +17,7 @@ $table-border-width: 8px;
   display: flex;
   flex-direction: column;
 
-  &__header-row { 
+  &__header-row {
     display: flex;
     font-weight: bold;
     position: relative;
@@ -28,7 +28,7 @@ $table-border-width: 8px;
       position: relative;
       @include lvl-transition();
       @extend .noselect;
-      
+
       .cell-content {
         box-shadow: 0 2px 0 0 currentColor;
 
@@ -41,13 +41,13 @@ $table-border-width: 8px;
           // content: "\f021";
         }
       }
-      
+
       &:hover {
         color: $white;
         background: $primary-color;
         @include lvl-transition();
         .cell-content {
-          box-shadow: 0 2px 0 0 rgba(0,0,0,0);  
+          box-shadow: 0 2px 0 0 rgba(0,0,0,0);
         }
       }
 
@@ -65,7 +65,7 @@ $table-border-width: 8px;
       .cell-content {
         &:after {
           content: "\f093";
-        }        
+        }
       }
     }
 
@@ -90,7 +90,7 @@ $table-border-width: 8px;
         .cell-content {
           background-image:
             linear-gradient(
-              to left, 
+              to left,
               rgba($table-odd-background, 0),
               rgba($table-odd-background, 1) $one-unit * 0.5,
               $table-odd-background
@@ -100,7 +100,7 @@ $table-border-width: 8px;
     }
 
     &:hover {
-
+      @include lvl-transition();
       &:before { // The hover dot
         content: "\2022";
         font-size: 52px;
@@ -109,7 +109,6 @@ $table-border-width: 8px;
         left: -18px;
         top: -16px;
       }
-      @include lvl-transition();
 
       .cell-content {
         box-shadow: 0 2px 0 0 $secondary-color;
@@ -123,7 +122,7 @@ $table-border-width: 8px;
         .cell-content {
           background-image:
             linear-gradient(
-              to left, 
+              to left,
               rgba($warning-color, 0),
               rgba($warning-color, 1) $one-unit * 0.5,
               $warning-color
@@ -144,13 +143,34 @@ $table-border-width: 8px;
       padding-left: $one-unit * 1.5; // same as the padding provided in @mixin padding-outer-wrapper
     }
 
-    &:last-of-type {  
+    &:last-of-type {
       padding-right: $one-unit * 1.5; // same as the padding provided in @mixin padding-outer-wrapper
     }
-    
+
+  }
+
+  // .tm-table variations
+  &.--small-table { // Small tables, currently used for Live Chat in app
+    border-radius: $border-radius;
+    overflow: hidden;
+    .tm-table__header-row {
+      border-bottom: 2px solid $primary-color;
+    }
+    .tm-table__cell {
+      white-space: normal;
+
+      &:first-of-type {
+        padding-left: $one-unit;
+      }
+
+      &:last-of-type {
+        padding-right: $one-unit;
+      }
+    }
   }
 
 }
+
 
 .--single-sales {
   .tm-table {
@@ -163,7 +183,7 @@ $table-border-width: 8px;
 }
 
 .tm-table--narrow { // Narrow width table
-  
+
   // border-radius: $border-radius;
   // overflow: hidden;
   // margin: 0 ($one-unit * 1.5); // same as outere wrapper
@@ -184,7 +204,7 @@ $table-border-width: 8px;
 
     }
 
-    &:last-of-type {  
+    &:last-of-type {
       // padding-right: 24vw;
     }
   }
@@ -192,7 +212,7 @@ $table-border-width: 8px;
 
 // Specific
 .--change-password { // Should be more dynamic/flexible maybe(?)
-  min-width: 250px; 
+  min-width: 250px;
 }
 
 .--align-right {

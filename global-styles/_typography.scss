@@ -54,9 +54,6 @@ Reset/Settings
 ******************************/
 * {
   font-size: $font-size-default;
-}
-
-.lvl-tm {
   font-family: $font-family-default;
   color: $font-color-default;
   line-height: $line-height-default;
@@ -65,7 +62,7 @@ Reset/Settings
 /*****************************
 Styles
 ******************************/
-p {
+p:not(:last-child) {
   font-size: $one-unit;
   margin-bottom: $one-unit;
 }

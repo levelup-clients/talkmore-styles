@@ -1,0 +1,48 @@
+// Added while working on livechat in app
+
+.tm-card {
+  background: $tertiary-color;
+  padding: $one-unit;
+  border-radius: $border-radius;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+  &__header {
+    font-size: $one-unit;
+    margin-bottom: $one-unit * .25;
+    font-weight: bold;
+  }
+
+  &__body {
+    font-style: italic;
+  }
+
+  &.--has-icon {
+    padding-left: $one-unit * 4; // Left position of icon + icon width
+    &:before {
+      position: absolute;
+      left: $one-unit;
+      speak: none;
+      content: "\f008";
+      font-family: 'talkmore-icons';
+      font-size: $one-unit * 2;
+
+    }
+  }
+
+  &--small-text { // temp naming (used in the sdk)
+    .tm-card__body {
+      margin-bottom: $one-unit * .5;
+      * {
+        font-size: 13px;
+      }
+    }
+
+    .button {
+      @extend .tiny-button
+    }
+  }
+
+
+}
