@@ -1,33 +1,51 @@
-// Util
-@import "mixins";
-@import "variables";
-
 // Reset
-@import "reset";
+body {
+  padding: 0;
+  margin: 0;
+  overflow-y: scroll;
+}
 
-// Global
-@import "global";
+// Body/HTML config
+body, html {
+  width: 100%;
+  height: 100%;
+}
 
-// Typography
-@import "typography";
+//
+.lvl-tm {
 
-// Forms
-@import "forms";
+  // Util
+  @import "mixins";
+  @import "variables";
 
-// Tables
-@import "tables";
+  // Reset
+  @import "reset";
 
-// Filters
-@import "filters";
+  // Global
+  @import "global";
 
-// Add user
-@import "add-user";
+  // Typography
+  @import "typography";
 
-// Add menu
-@import "menu";
+  // Forms
+  @import "forms";
 
-// Add pagination
-@import "pagination";
+  // Tables
+  @import "tables";
 
-// react-redux-toastr
-@import '~react-redux-toastr/src/styles/index';
+  // Filters
+  @import "filters";
+
+  // Add user
+  @import "add-user";
+
+  // Add menu
+  @import "menu";
+
+  // Add pagination
+  @import "pagination";
+
+  // react-redux-toastr
+  @import '~react-redux-toastr/src/styles/index';
+
+}

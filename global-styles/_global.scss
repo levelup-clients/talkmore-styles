@@ -63,7 +63,7 @@ temp for svg in header, @todo maybe move from here
   fill: $secondary-color;
 }
 
-svg {
+.tm-logo svg {
   height: $one-unit * 2;
   width: auto;
 }
@@ -203,10 +203,6 @@ button {
 /*****************************
 Project Globals
 ******************************/
-body, html {
-  width: 100%;
-  height: 100%;
-}
 
 // Body color logged in
 .logged-in {
