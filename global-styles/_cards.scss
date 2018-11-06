@@ -31,5 +31,18 @@
     }
   }
 
+  &--small-text { // temp naming (used in the sdk)
+    .tm-card__body {
+      margin-bottom: $one-unit * .5;
+      * {
+        font-size: 13px;
+      }
+    }
+
+    .button {
+      @extend .tiny-button
+    }
+  }
+
 
 }
