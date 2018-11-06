@@ -45,9 +45,10 @@
     display: flex;
     align-items: flex-start;
     flex-shrink: 0;
+    padding: $one-unit 0;
 
     &:not(:last-child) {
-      margin-bottom: $one-unit * .5;
+      // margin-bottom: $one-unit * .5;
     }
 
     .message {
