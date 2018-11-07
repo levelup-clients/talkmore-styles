@@ -125,40 +125,7 @@ a {
 /*****************************
 Buttons
 ******************************/
-// Live chat sdk legacy
 
-
-// button, .button {
-//   -webkit-appearance: none;
-//   -moz-appearance: none;
-//   background: transparent;
-//   border: 0;
-// }
-
-// button:active, textarea:active, input:active, button:focus, textarea:focus, input:focus { // todo, move away from here
-//   outline: none;
-// }
-
-// button:hover {
-//   cursor: pointer;
-// }
-
-
-// .button {
-//   border: 2px solid $primary-color;
-//   border-radius: $border-radius;
-//   padding: ($one-unit * 0.5) ($one-unit);
-//   transition: all .2s ease;
-
-//   &:hover {
-//     // background: $primary-color;
-//     // color: $white;
-//     // transition: all .2s ease;
-//   }
-
-// }
-
-// Buttons
 button:not(.react-datepicker__navigation) {
   @extend .noselect;
   border: none; // Reset

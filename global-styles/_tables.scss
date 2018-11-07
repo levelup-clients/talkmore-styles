@@ -172,41 +172,12 @@ $table-border-width: 8px;
 
 }
 
-
 .--single-sales {
   .tm-table {
     .tm-table__row {
       .tm-table__cell:first-child {
         width: 250px;
       }
-    }
-  }
-}
-
-.tm-table--narrow { // Narrow width table
-
-  // border-radius: $border-radius;
-  // overflow: hidden;
-  // margin: 0 ($one-unit * 1.5); // same as outere wrapper
-  // border: 2px solid $primary-color;
-  // // max-width: 800px;
-  // margin-bottom: $one-unit * 3;
-
-  .tm-table__row {
-   // justify-content: flex-end;
-  }
-
-  .tm-table__cell {
-    // width: 10%;
-    &:first-of-type {
-
-      // padding-left: 24vw;
-
-
-    }
-
-    &:last-of-type {
-      // padding-right: 24vw;
     }
   }
 }
