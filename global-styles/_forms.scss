@@ -161,23 +161,22 @@ Plugins
 }
 
 // Datepicker styles - Some reset / overrides
-#root {
-  .react-datepicker {
-    border: 2px solid $primary-color;
+.react-datepicker {
+  border: 2px solid $primary-color;
 
-    &__triangle {
-      display: none;
-    }
-
-    button {
-      border-radius: 0;
-    }
+  &__triangle {
+    display: none;
   }
 
-  .react-datepicker__day--selected, .react-datepicker__day--in-selecting-range, .react-datepicker__day--in-range {
-    background: $primary-color;
+  button {
+    border-radius: 0;
   }
 }
+
+.react-datepicker__day--selected, .react-datepicker__day--in-selecting-range, .react-datepicker__day--in-range {
+  background: $primary-color;
+}
+
 
 
 

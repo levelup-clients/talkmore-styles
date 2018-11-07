@@ -18,6 +18,9 @@ body, html {
 //
 .lvl-tm {
 
+  // LVL wrapper settings
+  height: 100%;
+
   // Util
   @import "mixins";
   @import "variables";

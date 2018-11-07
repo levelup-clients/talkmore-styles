@@ -2,6 +2,7 @@
 @import "variables";
 
 // @todo, consider renaming _wrapper classes (classes where this is a postfix)
+// @todo, most or many of these globals are actually styles for (and only) used in Field Sales
 
 /*****************************
 Icon
@@ -158,7 +159,7 @@ Buttons
 // }
 
 // Buttons
-button {
+button:not(.react-datepicker__navigation) {
   @extend .noselect;
   border: none; // Reset
 
@@ -263,7 +264,7 @@ Project Globals
   }
 }
 
-#root, .app_wrapper, .app {
+.app_wrapper, .app {
   height: 100%;
 }
 
