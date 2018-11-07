@@ -2,6 +2,7 @@
 @import "variables";
 
 // @todo, consider renaming _wrapper classes (classes where this is a postfix)
+// @todo, most or many of these globals are actually styles for (and only) used in Field Sales
 
 /*****************************
 Icon
@@ -124,8 +125,8 @@ a {
 /*****************************
 Buttons
 ******************************/
-// Buttons
-button {
+
+button:not(.react-datepicker__navigation) {
   @extend .noselect;
   border: none; // Reset
 
@@ -182,8 +183,17 @@ button {
   }
 
   &.small-button {
-    padding: 13px 20px;; // 15px 25px;
+    padding: 13px 20px; // 15px 25px;
     font-size: 16px;
+  }
+
+  &.tiny-button {
+    padding: 8px 12px; // 15px 25px;
+    font-size: 13px;
+  }
+
+  &.--transparent {
+    background: rgba(0,0,0,0);
   }
 
   &.btn-danger { // @todo, rename class
@@ -221,7 +231,7 @@ Project Globals
   }
 }
 
-#root, .app_wrapper, .app {
+.app_wrapper, .app {
   height: 100%;
 }
 
@@ -395,7 +405,6 @@ Main
     overflow: hidden;
 
   }
-
 
 }
 

@@ -1,8 +1,6 @@
 // Filter wrapper
 .tm-filters {
   display: flex;
-
-
 }
 
 // Filter groups
@@ -34,7 +32,7 @@
       margin-bottom: $one-unit * .5;
 
       &:last-child {
-        margin-bottom: 0;        
+        margin-bottom: 0;
       }
     }
   }
@@ -56,14 +54,13 @@
   }
 
   .react-datepicker-wrapper {
-    width: 100%; 
     .react-datepicker__input-container {
-      width: 100%; 
+      width: 100%;
       input {
-        text-align: center;  
+        text-align: center;
         padding-left: 4px; // Works as a reset
         padding-right: 4px; // Works as a reset
-      }      
+      }
     }
   }
 }
