@@ -196,6 +196,68 @@ button:not(.react-datepicker__navigation) {
     background: rgba(0,0,0,0);
   }
 
+  &.--approve,  &.--notnow, &.--reject { // Used in Livechat in-app-app
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    background: none;
+    white-space: normal;
+    border: 2px solid $gray-light;
+
+    &:before {
+      @extend .icon;
+      width: 100%;
+      display: block;
+      border-radius: 100px;
+      width: 30px;
+      height: 30px;
+      line-height: 30px;
+      margin: 0 auto;
+      margin-bottom: $one-unit * .25;
+    }
+
+    &:hover {
+      background: none;
+      border: 2px solid $secondary-color;
+    }
+
+  }
+
+  &.--approve {
+    &:before {
+      content: '\f012';
+      background: $secondary-color;
+    }
+
+    &:hover {
+      border-color: $secondary-color;
+    }
+  }
+
+  &.--notnow {
+    &:before {
+      content: '\f021';
+      background: $warning-color;
+    }
+
+    &:hover {
+      border-color: $warning-color;
+    }
+  }
+
+  &.--reject {
+    &:before {
+      content: '\f00c';
+      background: $alert-color;
+    }
+
+    &:hover {
+      border-color: $alert-color;
+    }
+  }
+
+
+
+
   &.btn-danger { // @todo, rename class
     background: $alert-color;
     color: $white;
@@ -206,9 +268,9 @@ button:not(.react-datepicker__navigation) {
   }
 }
 
-
-
-
+.button-group {
+  display: flex;
+}
 
 /*****************************
 Project Globals
