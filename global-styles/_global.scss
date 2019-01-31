@@ -89,6 +89,7 @@ Lightbox
   width: $overlay-width;
   padding: $overlay-padding;
   background: $white;
+  position: relative;
 
   button {
       width: 100%;
@@ -96,6 +97,12 @@ Lightbox
 
   h1 {
     font-size: $one-unit * 1.5;
+  }
+
+  &__close-button {
+    position: absolute;
+    top: $one-unit;
+    right: $one-unit;
   }
 }
 

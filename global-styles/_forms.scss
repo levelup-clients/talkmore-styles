@@ -185,7 +185,7 @@ Select input
 ******************************/
 .select_wrapper {
   position: relative;
-  display: inline-block;
+  // display: inline-block;
 
   &:after {
     font-family: 'talkmore-icons';
@@ -194,6 +194,7 @@ Select input
     position: absolute;
     right: $one-unit;
     top: 18px; // Temp, can this be dynamic?
+    pointer-events: none;
   }
   select {
     // Set
@@ -207,8 +208,11 @@ Select input
     // Project styles
     border: 2px solid $primary-color;
     border-radius: 0;
-    padding: $button-padding;
+    padding: $select-padding;
     background: white;
+
+    //
+    width: 100%;
   }
 }
 

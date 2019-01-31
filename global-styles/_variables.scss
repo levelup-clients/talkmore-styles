@@ -21,10 +21,10 @@ $white: #ffffff;
 $gray-light: #E7E5E4;
 $gray-lightest: #F7F5F5;
 
-// Sizing 
+// Sizing
 $one-unit: 16px;
 
-// UI 
+// UI
 $border-radius: 6px; // Verdi hentet fra talkmore.no
 
 // Typography
@@ -37,8 +37,9 @@ $font-family-default: 'CircularPro', sans-serif;
 $overlay-width: 400px;
 $overlay-padding: $one-unit * 3;
 
-// Button stuff
+// Button/select stuff
 $button-padding: 15px 25px;
+$select-padding: 15px 40px 15px 25px;
 
 // Compability
 $global-margin: $one-unit;
