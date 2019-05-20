@@ -154,9 +154,16 @@ $table-border-width: 8px;
   &.--small-table { // Small tables, currently used for Live Chat in app
     border-radius: $border-radius;
     overflow: hidden;
+
     .tm-table__header-row {
       border-bottom: 2px solid $primary-color;
     }
+
+    .tm-table__body {
+      font-size: 10px; * { font-size: 10px; }
+      overflow-wrap: break-word; * { font-size: 10px; }
+    }
+
     .tm-table__cell {
       white-space: normal;
 
@@ -168,6 +175,7 @@ $table-border-width: 8px;
         padding-right: $one-unit;
       }
     }
+
   }
 
 }
