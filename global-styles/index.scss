@@ -63,11 +63,12 @@ Fonts
 }
 
 
-//
+// LVL wrapper settings
 .lvl-tm {
 
-  // LVL wrapper settings
-  height: 100%;
+  &--field-sales {
+    height: 100%;
+  }
 
   // Util
   @import "mixins";
