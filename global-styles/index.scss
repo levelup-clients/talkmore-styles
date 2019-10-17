@@ -113,6 +113,10 @@ Fonts
   // react-redux-toastr
   @import '~react-redux-toastr/src/styles/index';
 
+  &--livechat {
+    * { font-size: 14px; }
+  }
+
 }
 
 //
