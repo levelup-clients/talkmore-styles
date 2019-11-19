@@ -1,92 +1,120 @@
-  // Chat message styling ("Message bubles")
-  // Used in both Live Chat SDK and Live Chat in app
+// Chat message styling ("Message bubles")
+// Used in both Live Chat SDK and Live Chat in app
 
 
 
-  // // Colors
-  // $white: #ffffff;
-  // $tertiary-color: #D9EBCB;
-  // $color-green: #A1D078;
-  // $color-blue: #000E4A;
-  // $color-light-gray: #BCBCBC;
-  // $color-medium-gray: #F7F5F5;
+// // Colors
+// $white: #ffffff;
+// $tertiary-color: #D9EBCB;
+// $color-green: #A1D078;
+// $color-blue: #000E4A;
+// $color-light-gray: #BCBCBC;
+// $color-medium-gray: #F7F5F5;
 
-  // // config UI
-  // $border-radius: $one-unit * 0.75;
-  // $border-radius-small: $border-radius * 0.5;
-  // $border-radius-greeting: 35px; // rounded...
-  $border-radius-message: 25px;
-  // $border-width: 3px;
-  // $border-width-button: 2px; // also for input fields
-  // $icon-size-medium: $one-unit * 1.5; // Width...
+// // config UI
+// $border-radius: $one-unit * 0.75;
+// $border-radius-small: $border-radius * 0.5;
+// $border-radius-greeting: 35px; // rounded...
+$border-radius-message: 25px;
+// $border-width: 3px;
+// $border-width-button: 2px; // also for input fields
+// $icon-size-medium: $one-unit * 1.5; // Width...
 
-  // $chat-buble-size: $one-unit * 4.5;
+// $chat-buble-size: $one-unit * 4.5;
 
-  // $padding-tm: ($one-unit * .75);
-  // $padding-icons: 6px;
+// $padding-tm: ($one-unit * .75);
+// $padding-icons: 6px;
 
-  // // mics
-  // $font-size: $one-unit;
+// // mics
+// $font-size: $one-unit;
 
-  // // temp
-  // $footer-header-height: $one-unit * 3.25;
+// // temp
+// $footer-header-height: $one-unit * 3.25;
 
-  #message-list { // temp placement in this scss file
-    .message-container {
-      max-width: 90%;
-    }
-  }
-
-  .message-container.agent {
-    align-self: flex-start;
-  }
-
+#message-list { // temp placement in this scss file
   .message-container {
+    max-width: 90%;
+  }
+}
+
+.message-container.agent {
+  align-self: flex-start;
+}
+
+.message-container {
+  display: flex;
+  align-items: flex-start;
+  flex-shrink: 0;
+  padding: $one-unit 0;
+
+  &:not(:last-child) {
+    // margin-bottom: $one-unit * .5;
+  }
+
+  .message {
+    background-color: $primary-color;
+    padding: ($one-unit * .75) $one-unit;
+    border-radius: $border-radius-message 0 $border-radius-message $border-radius-message;
+    word-wrap: break-word;
+    max-width: 100%;
+  }
+
+  &.visitor {
     display: flex;
-    align-items: flex-start;
-    flex-shrink: 0;
-    padding: $one-unit 0;
-
-    &:not(:last-child) {
-      // margin-bottom: $one-unit * .5;
-    }
-
+    justify-content: flex-end;
     .message {
-      background-color: $primary-color;
-      padding: ($one-unit * .75) $one-unit;
-      border-radius: $border-radius-message 0 $border-radius-message $border-radius-message;
-      word-wrap: break-word;
-      max-width: 100%;
-    }
-
-    &.visitor {
-      display: flex;
-      justify-content: flex-end;
-      .message {
-        margin-left: $one-unit; // same as avatar width
-        div {
-          color: $white;
-        }
-      }
-    }
-
-    &.agent {
-
-      .message {
-        background-color: $tertiary-color;
-        border-radius: 0 $border-radius-message $border-radius-message $border-radius-message;
-        color: $tertiary-color;
+      margin-left: $one-unit; // same as avatar width
+      div {
+        color: $white;
       }
     }
   }
 
-  .message-container.system {
+  &.agent {
+    .message {
+      background-color: $tertiary-color;
+      border-radius: 0 $border-radius-message $border-radius-message $border-radius-message;
+      color: $tertiary-color;
+    }
+  }
+  &.system {
     align-self: center;
+    .message {
+      border-radius: 0;
+      color: #000;
+      box-shadow: none;
+      background-color: transparent;
+    }
+  }
+  &.transfer {
+    // margin-top: $one-unit;
+    padding-top: 0;
+    padding-bottom: 0;
+    background-color: lightblue;
+    background-color: blue;
+    background-color: #CE7DA5;
+    background-color: #5E4B56;
+    background-color: #FF6978;
+    border-radius: 0;
+    border-radius: 20px;
+    .inner-message {
+      // font-weight: 600;
+      color: white;
+    }
   }
 
-  .message-container.system .message {
-    border-radius: 0;
-    color: #000;
-    box-shadow: none;
-    background-color: transparent;
+  .inner-message {
+    white-space: pre-wrap;
+    display: flex;
+    align-items: center;
   }
+
+  .bubble-icon {
+    display: inline-block;
+    margin-right: $one-unit / 2;
+    color: blue;
+    font-size: 24px;
+  }
+}
+
+
