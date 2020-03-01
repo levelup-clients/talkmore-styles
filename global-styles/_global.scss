@@ -769,3 +769,122 @@ Loading in UI // TEMP STYLES
   border: 2px solid $primary-color;
   margin-bottom: $one-unit;
 }
+
+.extra-abroad-country {
+  p {
+    margin-bottom: 4px;
+  }
+}
+
+.fieldsales-overlay {
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(200, 200, 200, 0.9);
+  > div {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    bottom: 10%;
+    right: 10%;
+    background-color: #f8f9fa;
+    padding: 4rem;
+    box-shadow: 5px 5px 10px #888;
+    border-radius: 10px;
+    h3 {
+      font-size: 34px;
+    }
+    p {
+      font-size: 22px;
+    }
+    > div {
+      &:first-child {
+        margin-bottom: 3rem;
+      }
+    }
+  }
+  .toggles {
+    flex: 1;
+    > div {
+      > div:first-child {
+        display: flex;
+        div:first-child {
+          display: flex;
+          align-items: center;
+          flex: 1;
+          font-size: 22px;
+        }
+      }
+      > div:nth-child(2) {
+        margin-top: 1rem;
+        p {
+          font-size: 16px;
+          margin-bottom: 1rem;
+        }
+      }
+      margin-bottom: 2rem;
+      padding: 1rem;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      background-color: #fff;
+    }
+    .oh-yeah, .oh-noes {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100px;
+      height: 50px;
+      border-radius: 10px;
+      color: #fff;
+      font-size: 18px;
+      font-weight: 800;
+      border: 1px solid #aaa;
+      color: #aaa;
+    }
+    .oh-yeah {
+      margin-right: 1rem;
+      border-color: #81d058;
+      color: #81d058;
+      &.active {
+        border-color: #a1d078;
+        background-color: #a1d078;
+        color: #000e4e;
+      }
+    }
+    .oh-noes {
+      margin-left: 1rem;
+      color: #e09198;
+      border-color: #e09198;
+      &.active {
+        border-color: #e09198;
+        background-color: #e09198;
+        color: #000e4e;
+      }
+    }
+  }
+  .buttons {
+    display: flex;
+    > * {
+      display: flex;
+      justify-content: center;
+      flex: 1;
+      padding: 2rem 0;
+      border-radius: 10px;
+    }
+    .cancel {
+      margin-right: 1rem;
+      background-color: #fff;
+      border: 1px solid #aaa;
+    } 
+    .continue {
+      margin-left: 1rem;
+      background-color: #a1d078;
+      color: #000e4e;
+    }   
+  }
+}
