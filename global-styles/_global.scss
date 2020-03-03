@@ -792,15 +792,30 @@ Loading in UI // TEMP STYLES
     left: 10%;
     bottom: 10%;
     right: 10%;
+    @media (max-width: 720px) {
+      top: 5%;
+      left: 5%;
+      bottom: 5%;
+      right: 5%;
+    }
     background-color: #f8f9fa;
     padding: 4rem;
     box-shadow: 5px 5px 10px #888;
     border-radius: 10px;
+    @media (max-width: 720px) {
+      padding: 1.5rem;
+    }
     h3 {
       font-size: 34px;
+      @media (max-width: 720px) {
+        font-size: 20px;
+      }
     }
     p {
       font-size: 22px;
+      @media (max-width: 720px) {
+        font-size: 16px;
+      }
     }
     > div {
       &:first-child {
@@ -813,11 +828,24 @@ Loading in UI // TEMP STYLES
     > div {
       > div:first-child {
         display: flex;
-        div:first-child {
+        > div:first-child {
           display: flex;
           align-items: center;
           flex: 1;
           font-size: 22px;
+          @media (max-width: 720px) {
+            font-size: 16px;
+          }
+        }
+        > div:last-child {
+          display: flex;
+          @media (max-width: 720px) {
+            display: block;
+            margin-left: 0.5rem;
+            > div:first-child {
+              margin-bottom: 1rem;
+            }
+          }
         }
       }
       > div:nth-child(2) {
@@ -825,6 +853,9 @@ Loading in UI // TEMP STYLES
         p {
           font-size: 16px;
           margin-bottom: 1rem;
+          @media (max-width: 720px) {
+            font-size: 12px;
+          }
         }
       }
       margin-bottom: 2rem;
@@ -845,11 +876,19 @@ Loading in UI // TEMP STYLES
       font-weight: 800;
       border: 1px solid #aaa;
       color: #aaa;
+      @media (max-width: 720px) {
+        font-size: 12px;
+        width: 70px;
+        height: 30px;
+      }
     }
     .oh-yeah {
-      margin-right: 1rem;
+      margin-right: 0.5rem;
       border-color: #81d058;
       color: #81d058;
+      @media (max-width: 720px) {
+        margin-right: 0;
+      }
       &.active {
         border-color: #a1d078;
         background-color: #a1d078;
@@ -857,9 +896,12 @@ Loading in UI // TEMP STYLES
       }
     }
     .oh-noes {
-      margin-left: 1rem;
+      margin-left: 0.5rem;
       color: #e09198;
       border-color: #e09198;
+      @media (max-width: 720px) {
+        margin-left: 0;
+      }
       &.active {
         border-color: #e09198;
         background-color: #e09198;
