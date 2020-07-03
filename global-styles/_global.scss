@@ -540,6 +540,16 @@ Example:
   @include add-icon-to-button("\f012", 'left');
 }
 
+.edit-item {
+  @extend .secondary;
+  @include add-icon-to-button("\f024");
+}
+
+.delete-item {
+  @extend .secondary;
+  @include add-icon-to-button("\f029");
+}
+
 /*****************************
 Misc
 ******************************/
@@ -912,21 +922,28 @@ Loading in UI // TEMP STYLES
   .buttons {
     display: flex;
     > * {
-      display: flex;
-      justify-content: center;
-      flex: 1;
       padding: 2rem 0;
-      border-radius: 10px;
     }
-    .cancel {
-      margin-right: 1rem;
-      background-color: #fff;
-      border: 1px solid #aaa;
-    } 
-    .continue {
-      margin-left: 1rem;
-      background-color: #a1d078;
-      color: #000e4e;
-    }   
   }
+}
+
+.buttons {
+  display: flex;
+  > * {
+    display: flex;
+    justify-content: center;
+    flex: 1;
+    // padding: 2rem 0;
+    border-radius: 10px;
+  }
+  .cancel {
+    margin-right: 1rem;
+    background-color: #fff;
+    border: 1px solid #aaa;
+  } 
+  .continue {
+    margin-left: 1rem;
+    background-color: #a1d078;
+    color: #000e4e;
+  }   
 }
